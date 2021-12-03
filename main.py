@@ -17,7 +17,7 @@ if today_tuple in birthdays_dict:
     file_path = f"letter_templates/letter_{random.randint(1, 3)}.txt"
     with open(file_path) as letter_file:
         contents = letter_file.read()
-        contents.replace("[NAME]", birthday_person["name"])
+        contents = contents.replace("[NAME]", birthday_person["name"])
 
 # Send the letter generated in step 3 to that person's email address.
 with smtplib.SMTP(host="smtp.gmail.com") as connection:
